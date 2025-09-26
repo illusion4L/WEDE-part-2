@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chic Beauty - Shop All</title>
+    
+    <style>
+        /* Import modern, sleek font */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+
+        /* --- Global Styles & Resets --- */
+        :root {
+            /* Chic Beauty Palette: Deep Plum, Soft Cream, Muted Rose Accent */
+            --primary-color: #3f2e4e; 
+            --secondary-color: #f8f4f9; 
+            --accent-color: #e5989b; 
+            --text-color: #333;
+            --light-text-color: #ffffff;
+            --font-family: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--light-text-color); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            padding: 0;
+        }
+
+        .logo {
+            height: 45px;
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 35px;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            padding: 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        /* --- Section Styling --- */
+        main {
+            padding: 0;
+        }
+
+        section {
+            padding: 80px 5%;
+            background-color: var(--light-text-color);
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--secondary-color);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* --- Products Page Specifics --- */
+        
+        /* Filter Bar Styling */
+        .filter-bar {
+            margin-bottom: 40px;
+            padding: 15px 0;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .filter-bar a {
+            margin: 0 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .filter-bar a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Product Grid Styling */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-card h3 {
+            margin-top: 15px;
+            font-size: 1.4em;
+            padding: 0 15px;
+            color: var(--accent-color);
+        }
+
+        .product-card p {
+            color: #666;
+            padding: 0 15px 15px;
+        }
+
+        .view-details {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            font-weight: 600;
+            border-top: 1px solid #ddd;
+            transition: background-color 0.3s ease;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .view-details:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        
+        /* Out of Stock Styling */
+        .product-card.out-of-stock {
+            opacity: 0.6;
+            filter: grayscale(0.5);
+            pointer-events: none; 
+        }
+        .product-card.out-of-stock .view-details {
+            background-color: #cccccc; 
+            cursor: not-allowed;
+        }
+
+        /* --- Footer (Dark and Solid) --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 30px 5%;
+            margin-top: 0;
+            text-align: center;
+        }
+    </style>
+    </head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Chic Beauty Logo" class="logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Shop All</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="customize_or_blog.html">Blog & Tips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="all-products">
+            <h2>Our Complete Collection</h2>
+
+            <div class="filter-bar">
+                <p>Shop by: <a href="#">Skincare</a> | <a href="#">Makeup</a> | <a href="#">Body & Hair</a> | <a href="#">New Arrivals</a></p>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/clean.avif" alt="Gentle Cleanser">
+                    <h3>Daily Radiance Cleanser</h3>
+                    <p>A gentle yet effective cleanser for all skin types. Your first step to glowing skin.</p>
+                    <a href="#" class="view-details">View Product</a>
+                </div>
+                <div class="product-card out-of-stock">
+                    <img src="images/kiss.jpg" alt="Velvet Matte Lipstick">
+                    <h3>Velvet Matte Lipstick - Crimson Kiss</h3>
+                    <p class="error-text" style="color: red; font-weight: bold;">Currently Out of Stock</p>
+                    <a href="#" class="view-details">Notify Me</a>
+                </div>
+                <div class="product-card">
+                    <img src="images/pore.jpg" alt="Balancing Toner">
+                    <h3>Pore Refining Toner</h3>
+                    <p>Balances pH and minimizes pores, preparing your skin for treatment.</p>
+                    <a href="#" class="view-details">View Product</a>
+                </div>
+                <div class="product-card">
+                    <img src="images/drop.jfif" alt="Liquid Highlighter">
+                    <h3>Liquid Luminizer Drops</h3>
+                    <p>Achieve a dazzling, dewy glow with just a few drops.</p>
+                    <a href="#" class="view-details">Add to Cart</a>
+                </div>
+                <div class="product-card">
+                    <img src="images/eyeline.png" alt="Waterproof Eyeliner">
+                    <h3>Precision Waterproof Eyeliner</h3>
+                    <p>Create sharp lines that last all day, without smudging or fading.</p>
+                    <a href="#" class="view-details">Add to Cart</a>
+                </div>
+                <div class="product-card">
+                    <img src="images/cream.webp" alt="Deep Hydration Moisturizer">
+                    <h3>Deep Hydration Cream</h3>
+                    <p>Lock in moisture for a plump, youthful complexion, day and night.</p>
+                    <a href="#" class="view-details">View Product</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Chic Beauty. All rights reserved. | Explore your perfect look.</p>
+    </footer>
+</body>
+</html>

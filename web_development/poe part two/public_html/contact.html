@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chic Beauty - Contact Us</title>
+    
+    <style>
+        /* Import modern, sleek font */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap'); /* Adding a unique font for section headers */
+
+        /* --- Global Styles & Resets --- */
+        :root {
+            /* Chic Beauty Palette: Deep Plum, Soft Cream, Muted Rose Accent */
+            --primary-color: #3f2e4e; /* Deep Plum/Charcoal for elegance */
+            --secondary-color: #f8f4f9; /* Soft Rose/Cream for background */
+            --accent-color: #e5989b; /* Muted Rose/Berry for vibrancy */
+            --text-color: #333;
+            --light-text-color: #ffffff;
+            --font-family: 'Montserrat', sans-serif;
+            --header-font: 'Playfair Display', serif; /* New font for uniqueness */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--light-text-color); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 45px;
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 35px;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            padding: 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        /* --- Hero Section --- */
+        #contact-hero {
+            background: var(--primary-color); 
+            color: var(--light-text-color);
+            background-image: url('contact-hero-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            min-height: 30vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+        }
+
+        #contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 1;
+        }
+
+        #contact-hero h1, #contact-hero p {
+            z-index: 2;
+            position: relative;
+        }
+
+        #contact-hero h1 {
+            font-size: 3em;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 80px 5%;
+            background-color: var(--light-text-color);
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            max-width: 1200px;
+            text-align: center;
+        }
+        
+        /* --- Contact Page Specific Styling --- */
+        #contact-form-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            text-align: left;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 40px; 
+            background-color: var(--light-text-color);
+        }
+
+        .contact-details {
+            width: 40%;
+            padding: 30px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-details h3 {
+            font-family: var(--header-font); 
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-details strong {
+            color: var(--primary-color);
+        }
+        
+        /* Styling for the Location Box */
+        .location-box {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid var(--accent-color);
+            border-radius: 5px;
+            text-align: center;
+        }
+        .location-box p {
+            margin: 5px 0;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .location-box a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .location-box a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+
+        .contact-form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .contact-form label {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-family);
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(229, 152, 155, 0.5); 
+        }
+        
+        /* CTA Button Style */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--light-text-color);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-color);
+        }
+
+        .help-service-note {
+            color: #d9534f; 
+            margin-top: 20px;
+            font-style: italic;
+            font-weight: 600;
+            border: 1px solid #d9534f;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fef0f0;
+        }
+        
+        /* --- Footer (Dark and Solid) --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 30px 5%;
+            margin-top: 0;
+            text-align: center;
+        }
+    </style>
+    </head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Chic Beauty Logo" class="logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop All</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="customize_or_blog.html">Blog & Tips</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact-hero">
+            <div class="hero-content">
+                <h1>Let's Connect & Shine Together</h1>
+                <p>We're dedicated to helping you with product questions, support, and feedback.</p>
+            </div>
+        </section>
+
+        <section id="contact-form-section">
+            <div class="contact-details">
+                <h3>Our Support Hub</h3>
+                
+                <p><strong>Email:</strong> <a href="mailto:support@chicbeauty.com">support@chicbeauty.com</a></p>
+                <p><strong>Phone:</strong> 061 409 3806</p>
+                <p><strong>Hours:</strong> Mon-Fri, 9 AM - 5 PM (EST)</p>
+                
+                <div class="location-box">
+                    <h3>Chic Beauty Location </h3>
+                    <p>Proudly based and operating from:</p>
+                    <p><strong>Johannesburg, Gauteng, South Africa</strong></p>
+                    <a href="https://maps.google.com/?cid=2561081274942046273&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank">View on Map</a>
+                </div>
+
+              
+            </div>
+            
+            <form action="#" method="POST" class="contact-form">
+                <h3>Send Us A Message</h3>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Chic Beauty. All rights reserved. | Your beauty, our passion.</p>
+    </footer>
+</body>
+</html>
